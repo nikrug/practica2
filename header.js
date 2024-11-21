@@ -39,8 +39,8 @@
 dropdownCloseButtons.forEach(button => {
     button.addEventListener("click", () => {
         dropdown.classList.remove("show-dropdown"); // Скрываем выпадающее меню
-        showButtons.classList.remove("dropdown-button-hidden"); // Скрываем кнопки "Open Dropdown"
-        showCloseButtons.classList.remove("show-close"); // Показываем кнопки "Close"
+        showButtons.classList.remove("dropdown-button-hidden"); // показываем кнопки "Open Dropdown"
+        showCloseButtons.classList.remove("show-close"); // скрываем кнопки "Close"
     });
 
 });
