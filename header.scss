@@ -172,7 +172,6 @@ flex-direction: row;
     color: #aaa;
     float: right;
     cursor: pointer;
-  
     margin:30px 30px  0  auto;
 }
 .modal__email-password-container {
@@ -205,24 +204,32 @@ flex-direction: row;
   .dropdown-button-hidden{
     display: none;
   }
-.dropdown-content {
-    visibility: hidden;
-    position: absolute; /* Используем абсолютную позицию для .dropdown-content */
-    right: 0; /* Заканчиваем на правом краю родителя */
-    left: 0; /* К началу от края родителя */
-    background-color:$dark-blue-menu; /* Ваш цвет фона */
-    height: 100%;
+  .dropdown-content {
+    position: absolute;
+    right: 0;
+    left: 0;
+    background-color: $dark-blue-menu;
+    max-height: 0; /* Начальная высота 0 */
     margin-top: 15px;
     z-index: 1;
-    transition: opacity 0.4s, visibility 0.4s;
+    transition: max-height 0.4s ease, opacity 0.4s ease, visibility 0.4s ease; /* Плавный переход на max-height и opacity */
     display: flex;
     flex-direction: column;
-    padding-left: 20px; /* Отступ внутри содержимого на 20 пикселей */
+    padding-left: 20px;
     opacity: 0;
     border-top: 1px solid gray;
-    padding: 30px 0px 1px 20px ;
-  }
-.login-button{
+    padding: 30px 0px 1px 20px;
+    overflow: hidden; /* Скрывает содержимое, выходящее за пределы */
+}
+
+.show-dropdown {
+    visibility: visible; /* Начальное состояние видимости */
+    max-height: 100%; /* Установите максимальную высоту, достаточную для вашего содержимого */
+    height: 100%;
+    opacity: 1; /* Полная видимость */
+}
+
+  .login-button{
     width: 100px;
     height: 50px;
     background-color:$deep-blue ;
@@ -232,10 +239,6 @@ flex-direction: row;
     border: none ;
   }
 
-.show-dropdown {
-    visibility: visible;
-    opacity: 1;
-  }
 
 .close-button{
     display: none;
@@ -338,6 +341,7 @@ flex-direction: row;
     .show-dropdown {
         visibility: hidden;
         opacity: 1;
+        
       }
       .close-button{
         display: none;
