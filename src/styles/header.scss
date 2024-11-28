@@ -1,6 +1,6 @@
-@import "colors/colors.scss";
+@use "src/colors/colors.scss" as *;
 
-.header-body{
+.header{
     outline: 2px solid aqua;
     display: flex;
     width: 100%;
@@ -12,14 +12,14 @@
 
 }
 
-.header-body__header-menu{
+.header__header-menu{
     outline: 2px solid red;
     display: flex;
     justify-content: space-between;
     padding: 10px;
 }
 
-.header-body__header-search{
+.header__search{
     display: flex;
     gap:50px;
     margin:50px 10px 0 10px;
@@ -29,51 +29,55 @@
     flex-direction: column;
 }
 //search text
-.header-body__title-text{
+.header__title-text{
     font:600 20px/30px 'Poppins', sans-serif;
     color: $pure-white;
 }
 
-.header-body__title-text-gray{
+.header__title-text-gray{
     font:600 16px/22px 'Poppins', sans-serif;
     color:$description-light;
 }
 
-.header-body__search-text{
+.header__search-text{
  font:400 14px/24px 'Poppins', sans-serif;
  color: $pure-white;
 }
 
-.header-body__bottom-text{
+.header__bottom-text{
     font:500 14px/24px 'Poppins', sans-serif;
     color: $pure-white;
 }
 
-
-
 //search input
 
-.header-body__search-line{
-    width: 100%;
-    text-align: left;
-    align-items: center;
+.header__search-line input{
+height: 44px;
+width: 100%;
 }
 
-.header-body__input-style {
+.header__search-line {
+width: 100%;
+align-items: center;
+text-align: left;
+}
+
+.search{
+    width: 100%;
+}
+
+.search__input {
     position: relative;
 }
 
-
-.header-body__input-style img {
+.search__input img {
         position: absolute;
         left: 10px; /* Позиция изображения */
         top: 50%; /* Вертикальная позиция на середине контейнера */
         transform: translateY(-50%); /* Центрирование по вертикали */
-        }
+}
 
-.header-body__input-style input {
-    width:100%;
-    height: 44px;
+.search__input input {
     border-radius: 8px;
     font:500 16px/28px 'Poppins', sans-serif;
     color:$description-dark;
@@ -81,6 +85,11 @@
     box-sizing: border-box; /* Чтобы отступ не увеличивал ширину */
 }
 //menu-login text
+
+.header__menu-text-header{
+    display: none;
+}
+
 .menu-text{
     font: 500 14px/24px "Poppins", sans-serif;
     color:$description-light;
@@ -117,9 +126,6 @@ margin-right: 20px;
     margin:-20px 0 70px 0 ;
 }
 
-.header-menu__menu-text-header{
-    display: none;
-}
 .menu-text:hover {
     color:$pure-white; /* Цвет при наведении */
 }
@@ -201,9 +207,11 @@ flex-direction: row;
     border: none;
     cursor: pointer;
   }
+
   .dropdown-button-hidden{
     display: none;
   }
+
   .dropdown-content {
     position: absolute;
     right: 0;
@@ -229,7 +237,7 @@ flex-direction: row;
     opacity: 1; /* Полная видимость */
 }
 
-  .login-button{
+.login-button{
     width: 100px;
     height: 50px;
     background-color:$deep-blue ;
@@ -237,8 +245,7 @@ flex-direction: row;
     color:$pure-white;
     border-radius: 8px;
     border: none ;
-  }
-
+}
 
 .close-button{
     display: none;
@@ -254,31 +261,17 @@ flex-direction: row;
 
   
   @media(min-width:768px) {
-    .header-body__title-text{
+    .header__title-text{
         font:700 36px/52px 'Poppins', sans-serif;
         color: $pure-white;
     }
     
-    .header-body__title-text-gray{
+    .header__title-text-gray{
         font:500 18px/30px 'Poppins', sans-serif;
         color:$description-light;
     }
     
-    
-    .header-body__search-line{
-        width: 600px;
-        text-align: left;
-    }
-    .header-body__header-search{
-        display: flex;
-        gap:50px;
-        margin:100px 70px 0 70px;
-        outline: 2px solid rgb(199, 199, 199);
-        align-items: center;
-        text-align: center;
-        flex-direction: column;
 
-    }
     .dropdown-content {
         height: 50%;
     }
@@ -305,9 +298,16 @@ flex-direction: row;
     .modal__login-form{
         width: 90%;
     }
-    .header-body__input-style input {
-        height: 60px;
 
+    .header__search-line input{
+        width: 100%;
+        height: 60px;
+    }
+
+    .header__search-line {
+        width: 600px;
+        text-align: left;
+        align-items: center;
     }
   } 
   
@@ -317,7 +317,7 @@ flex-direction: row;
         align-items: center;
     }
 
-    .header-menu__menu-text-header{
+    .header__menu-text-header{
         display: block;
         margin-left: auto;
         
@@ -325,14 +325,16 @@ flex-direction: row;
     .dropdown-button {
         visibility: hidden;
         
-      }
-      .menu-text{
+    }
+
+    .menu-text{
         font: 500 14px/24px "Poppins", sans-serif;
         color:$description-light;
         margin: 0 30px 40px 0;
         cursor: pointer;
     }
-    .header-body__header-menu{
+
+    .header__header-menu{
         outline: 2px solid red;
         display: flex;
         justify-content: space-between;

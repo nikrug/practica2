@@ -1,4 +1,5 @@
-        // Получаем элементы
+export function initHeader() {
+// Получаем элементы
         const modal = document.querySelector(".modal");
         const openButtons = document.querySelectorAll(".click-open-modal");
         const closeButton = document.querySelectorAll(".modal__close");
@@ -46,6 +47,6 @@ dropdownCloseButtons.forEach(button => {
 });
 
 
-
+}
 
         
