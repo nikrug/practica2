@@ -1,0 +1,42 @@
+@use "src/colors/colors.scss" as *;
+
+.production{
+    padding: 30px 16px 40px 16px;
+    text-align: center;
+    align-items: center;
+    background-color: $production-bk;
+}
+
+.production__image-container{
+    margin-top: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    outline: 1px solid green;
+    display: flex;
+    gap:5px;
+
+}
+
+.production__title-text{
+    font:600 18px/30px 'Poppins', sans-serif;
+    color:$dark-blue;
+    
+}
+
+@media(min-width:768px) {
+    .production__title-text{
+        font:600 20px/30px 'Poppins', sans-serif;
+    }
+    .production__image-container{
+        gap:30px;
+    }
+
+  } 
+  
+  @media(min-width:1244px){
+    .production__image-container{
+        gap:89px;
+    
+    }
+  }

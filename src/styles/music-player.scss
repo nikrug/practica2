@@ -1,0 +1,307 @@
+@use "src/colors/colors.scss" as *;
+
+.music-player{
+padding: 50px 16px 50px 16px;
+text-align: left;
+align-items: center;
+position: relative;
+}
+///tab
+.tab {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    border: 2px solid red;
+  }
+  
+  .tab > input[type=radio] {
+    display: none;
+    border: 2px solid red;
+  }
+  
+  .tab-content {
+    display: none;
+    width: 100%;
+    height: 100%;
+    gap: -10px;
+    border: 2px solid red;
+  }
+  
+  #tab-btn-1:checked ~ #content-1,
+  #tab-btn-2:checked ~ #content-2,
+  #tab-btn-3:checked ~ #content-3,
+  #tab-btn-4:checked ~ #content-4,
+  #tab-btn-5:checked ~ #content-5,
+  #tab-btn-6:checked ~ #content-6 {
+    display: block;
+    border: 2px solid red;
+  }
+  
+  .tab > label {
+    padding-top: 0.5rem;
+    transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    background: 0 0;
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid red;
+  }
+  
+  .tab > label:hover {
+    border-bottom: 2px solid #818181;
+    padding-bottom: -2px;
+    font-weight: bold;
+    border: 2px solid red;
+  }
+  
+  .tab > input[type=radio]:checked + label {
+    font-weight: bold;
+    color: #212529;
+    border-bottom: 2px solid #000000;
+    border: 2px solid red;
+  }
+
+
+//player-song
+.include{
+    display: block;
+    width: 100%;
+    
+}
+.music-player__player-song{
+    display: flex;
+    padding: 10px 0;
+    width: 100%;
+    outline: 2px solid red;
+    
+}
+
+.music-player__player-text-box{
+    text-align: left;
+    margin-left:50px;
+    flex-direction: column;
+}
+
+.music-player__player-img-box{
+    flex-direction: row;
+    display: flex;
+    padding: 8px 0;
+    margin-left:auto;
+    max-height: 40px;
+}
+
+.show{
+    display: none;
+    visibility: hidden;
+
+}
+
+///filter 
+.filter{
+    z-index: 1000; /* Обеспечивает видимость над другими элементами */
+    width: 248px; /* Ширина фильтра */
+    height: 377px; /* Высота фильтра */
+    overflow: auto; /* Позволяет прокручивать содержимое, если оно выходит за пределы */
+    background-color:#EEEEEE;
+    transition: opacity .4s, visibility .4s; /* Плавный переход */
+    visibility: hidden; /* Скрывает элемент по умолчанию */
+    opacity: 0; /* Прозрачность по умолчанию */
+    position: absolute; /* Размещение относительно родительского элемента */
+    display: inline-block; /* Чтобы элемент мог занимать пространство */
+    top: 110px; /* Расположение сверху */
+    right:0; /* Расположение справа */
+    margin-right: 15px;
+    align-items: center;
+    padding: 10px 20px 0 20px;
+
+}
+label{
+    display: flex; /* Использование flex для выравнивания элементов на одной строке */
+    align-items: center; /* Вертикальное выравнивание контейнера */
+}
+.filter__show{
+    visibility: visible;
+    opacity: 1;
+}
+
+.close{
+   margin-left: 90%;
+}
+//SLYDER
+.slider-styled,
+.slider-styled .noUi-handle {
+  box-shadow: none;
+}
+
+/* Hide markers on slider handles */
+.slider-styled .noUi-handle::before,
+.slider-styled .noUi-handle::after {
+  display: none;
+}
+
+.slider-styled .noUi-handle .noUi-touch-area {
+  border: 1px solid transparent;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  width: auto;
+  height: auto;
+}
+
+/* Show a border when hovering the area the handle responds to */
+.slider-styled .noUi-handle:hover .noUi-touch-area {
+  cursor: pointer;
+}
+
+#invert-connects {
+  height: 10px;
+  margin-top: 40px;
+}
+
+#invert-connects .noUi-connect {
+  background: blue;
+}
+
+#invert-connects .noUi-handle {
+  height: 14px;
+  width: 14px;
+  top: -3px;
+  right: -7px;
+  /* half the width */
+  border-radius: 9px;
+  background: blue;
+  border: none;
+}
+
+.noUi-tooltip {
+  background-color: transparent;
+  color: rgb(90, 90, 90);
+  padding: 5px;
+  border: none;
+  font-size: 12px;
+  color: grey;
+  size: 20px;
+  font-weight: 500;
+  
+}
+
+//music text
+
+.music-player__title-text{
+    font:600 20px/30px 'Poppins', sans-serif;
+    color:$dark-blue;
+}
+
+.music-player__tab-text{
+    font:500 14px/19px 'Poppins', sans-serif;
+    color:$description-dark;
+}
+
+.music-player__song-name-text{
+    font:500 14px/19px 'Poppins', sans-serif;
+    color:$dark-blue;
+}
+
+.music-player__time-text{
+    font:400 12px/20px 'Poppins', sans-serif;
+    color:$description-dark;
+}
+
+//filter text
+
+.music-player__fiter-title-text{
+    font:500 16px/22px 'Poppins', sans-serif;
+    color:$description-dark;
+    margin-top: -30px;
+    margin-bottom: 20px;
+}
+
+.music-player__fiter-text{
+    font:400 14px/24px 'Poppins', sans-serif;
+    color:$description-dark;
+}
+
+.music-player__fiter-category-text{
+    font:500 14px/24px 'Poppins', sans-serif;
+    color:$deep-blue;
+}
+
+.filter__apply-button{
+    width: 100px;
+    height: 50px;
+    background-color:$deep-blue ;
+    font:500 14px/24px 'Poppins', sans-serif;
+    color:$pure-white;
+    border-radius: 8px;
+    border: none ;
+    margin-left: 60%;
+    margin-top: 30px;
+}
+
+.filter__all-category-button{
+    width: 250px;
+    height: 44px;
+    margin: 40px 0 20px 0;
+    border-radius: 8px;
+    background-color: $title-light;
+    border:1px solid $description-light;
+    text-align: left;
+}
+
+.fill__blue{
+    stroke:blue;
+    fill:blue;
+    cursor: pointer;
+}
+
+.filter__button{
+    margin-left: auto;
+    display: block;
+}
+.filter__button-tablet{
+    margin-left: auto;
+    display: none;
+}
+.filter__button-desktop{
+    margin-left: auto;
+    display: none;
+}
+@media(min-width:413px) {
+    .filter{
+        top: 80px; /* Расположение сверху */
+       }
+}
+@media(min-width:768px) {
+.filter__button{
+        
+        display: none;
+    }
+.filter__button-tablet{
+        
+        display: block;
+    }
+.show{
+    display: flex;
+    visibility: visible;
+}
+
+.filter{
+ top: 80px; /* Расположение сверху */
+}
+
+  } 
+  
+  @media(min-width:1244px){
+
+    .filter__button-tablet{
+        display: none;
+    }
+    .filter__button-desktop{
+        display: block;
+    }
+    .music-player__player-text-box{
+        text-align: left;
+        flex-direction: column;
+    }
+  }

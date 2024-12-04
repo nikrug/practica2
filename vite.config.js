@@ -7,6 +7,7 @@ export default defineConfig({
       input: {
         main: 'index.html',
         about: 'pages/header.html',
+        music:'music-player.html'
         
       },
     },

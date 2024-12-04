@@ -1,0 +1,65 @@
+
+<div class="music-player">
+  <div class="music-player__title-text">Best sound effects for youtube videos</div>
+       
+          <div class="tab music-player__tab-text" >
+            <input checked id="tab-btn-1" name="tab-btn" type="radio" value="">
+            <label for="tab-btn-1">All</label>
+            <input id="tab-btn-2" name="tab-btn" type="radio" value="">
+            <label for="tab-btn-2">Jumpscare</label>
+            <input id="tab-btn-3" name="tab-btn" type="radio" value="">
+            <label  for="tab-btn-3">Mellow</label>
+            <input id="tab-btn-4" name="tab-btn" type="radio" value="">
+            <label class="show" for="tab-btn-4">Happiness</label>
+            <input id="tab-btn-5" name="tab-btn" type="radio" value="">
+            <label class="show" for="tab-btn-5">Ambience</label>
+            <input class="show" id="tab-btn-6" name="tab-btn" type="radio" value="">
+            <label class="show" for="tab-btn-6">Zonk</label>
+            <span class="filter__button filter__open"><img  src=".\assets\music-img\filter_mobile.svg"></span>
+            <span class="filter__button-tablet filter__open" ><img  src=".\assets\music-img\filter_tablet.svg"></span>
+            <span class="filter__button-desktop filter__open"><img src=".\assets\music-img\filter_desctop.svg"></span> 
+
+            <div class="filter">
+              <span class="filter__close"><img src=".\assets\music-img\close_button.svg"></span> 
+                
+              </div>
+            
+            <!--Музыка для табов-->
+            <div class="tab-content" id="content-1">
+              <div class="include" data-src="./pages/music-player-song.html"></div>
+              <div class="include" data-src="./pages/music-player-song.html"></div>
+            </div>
+            <div class="tab-content" id="content-2">
+              <div class="include" data-src="./pages/music-player-song.html"></div>
+            </div>
+            <div class="tab-content" id="content-3">
+              <div class="include" data-src="./pages/music-player-song.html"></div>
+            </div>
+            <div class="tab-content" id="content-4">
+              <div class="include" data-src="./pages/music-player-song.html"></div>
+            </div>
+            <div class="tab-content" id="content-5">
+              <div class="include" data-src="./pages/music-player-song.html"></div>
+            </div>
+            <div class="tab-content" id="content-6">
+          </div>
+  
+  
+          
+</div>
+<a href="" class="music-link-text">See all sound effects</a>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const include = document.querySelectorAll("include");
+    include.forEach(async (el) => {
+        const src = el.getAttribute("src");
+        const response = await fetch(src);
+        const content = await response.text();
+        el.outerHTML = content; // Заменяем тег <include> контентом
+        initHeader(); 
+        initMusic(); 
+    });
+});
+</script>
+
