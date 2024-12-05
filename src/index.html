@@ -19,124 +19,81 @@
 
 <body>
 
-<include src="./pages/header.html"></include>
-<include src="./pages/production-house.html"></include>
-<div class="music-player">
-  <div class="music-player__title-text">Best sound effects for youtube videos</div>
-       
-          <div class="tab music-player__tab-text" >
-            <input checked id="tab-btn-1" name="tab-btn" type="radio" value="">
-            <label for="tab-btn-1">All</label>
-            <input id="tab-btn-2" name="tab-btn" type="radio" value="">
-            <label for="tab-btn-2">Jumpscare</label>
-            <input id="tab-btn-3" name="tab-btn" type="radio" value="">
-            <label  for="tab-btn-3">Mellow</label>
-            <input id="tab-btn-4" name="tab-btn" type="radio" value="">
-            <label class="show" for="tab-btn-4">Happiness</label>
-            <input id="tab-btn-5" name="tab-btn" type="radio" value="">
-            <label class="show" for="tab-btn-5">Ambience</label>
-            <input class="show" id="tab-btn-6" name="tab-btn" type="radio" value="">
-            <label class="show" for="tab-btn-6">Zonk</label>
-            <span class="filter__button filter__open"><img  src=".\assets\music-img\filter_mobile.svg"></span>
-            <span class="filter__button-tablet filter__open" ><img  src=".\assets\music-img\filter_tablet.svg"></span>
-            <span class="filter__button-desktop filter__open"><img src=".\assets\music-img\filter_desctop.svg"></span> 
+  <include src="./pages/header.html"></include>
+  <include src="./pages/production-house.html"></include>
+  <div class="music-player">
+    <div class="music-player__title-text">Best sound effects for youtube videos</div>
 
-            <div class="filter">
-              <span class="filter__close close"><img src=".\assets\music-img\close_button.svg"></span> 
-                <p class="music-player__fiter-title-text">Filter</p>
- 
-                <p class="music-player__fiter-text">Duration</p>
-                <div class="slider-styled" id="invert-connects"></div>
-                <button class="filter__all-category-button music-player__fiter-category-text">All Category</button>
-<label>
-    <input type="checkbox" name="subscribe">
-    <p class="music-player__fiter-text">Only free sounds</p>
-</label>
+    <div class="tab music-player__tab-text">
+      <input checked id="tab-btn-1" name="tab-btn" type="radio" value="">
+      <label for="tab-btn-1">All</label>
+      <input id="tab-btn-2" name="tab-btn" type="radio" value="">
+      <label for="tab-btn-2">Jumpscare</label>
+      <input id="tab-btn-3" name="tab-btn" type="radio" value="">
+      <label for="tab-btn-3">Mellow</label>
+      <input id="tab-btn-4" name="tab-btn" type="radio" value="">
+      <label class="show" for="tab-btn-4">Happiness</label>
+      <input id="tab-btn-5" name="tab-btn" type="radio" value="">
+      <label class="show" for="tab-btn-5">Ambience</label>
+      <input class="show" id="tab-btn-6" name="tab-btn" type="radio" value="">
+      <label class="show" for="tab-btn-6">Zonk</label>
+      <span class="filter__button filter__open"><img src=".\assets\music-img\filter_mobile.svg"></span>
+      <span class="filter__button-tablet filter__open"><img src=".\assets\music-img\filter_tablet.svg"></span>
+      <span class="filter__button-desktop filter__open"><img src=".\assets\music-img\filter_desctop.svg"></span>
 
-<label>
-    <input type="checkbox" name="favorite">
-    <p class="music-player__fiter-text">Only my favorite sounds</p>
-</label>
-                
-                <button class="filter__apply-button">Apply</button>
-              </div>
-            
-            <!--Музыка для табов-->
-            <div class="tab-content" id="content-1">
-              <div class="include" data-src="./pages/music-player-song.html"></div>
-              <div class="include" data-src="./pages/music-player-song.html"></div>
-              <div class="include" data-src="./pages/music-player-song.html"></div>
-              <div class="include" data-src="./pages/music-player-song.html"></div>
-              <div class="include" data-src="./pages/music-player-song.html"></div>
-              <div class="include" data-src="./pages/music-player-song.html"></div>
-            </div>
-            <div class="tab-content" id="content-2">
-              <div class="include" data-src="./pages/music-player-song.html"></div>
-            </div>
-            <div class="tab-content" id="content-3">
-              <div class="include" data-src="./pages/music-player-song.html"></div>
-            </div>
-            <div class="tab-content" id="content-4">
-              <div class="include" data-src="./pages/music-player-song.html"></div>
-            </div>
-            <div class="tab-content" id="content-5">
-              <div class="include" data-src="./pages/music-player-song.html"></div>
-            </div>
-            <div class="tab-content" id="content-6">
-          </div>
-  
-  
-          <a href="" class="music-link-text">See all sound effects</a>
-</div>
-</div>
+      <div class="filter">
+        <span class="filter__close close"><img src=".\assets\music-img\close_button.svg"></span>
+        <p class="music-player__fiter-title-text">Filter</p>
+
+        <p class="music-player__fiter-text">Duration</p>
+        <div class="slider-styled" id="invert-connects"></div>
+        <button class="filter__all-category-button music-player__fiter-category-text">All Category</button>
+        <label>
+          <input type="checkbox" name="subscribe">
+          <p class="music-player__fiter-text">Only free sounds</p>
+        </label>
+
+        <label>
+          <input type="checkbox" name="favorite">
+          <p class="music-player__fiter-text">Only my favorite sounds</p>
+        </label>
+
+        <button class="filter__apply-button">Apply</button>
+      </div>
+
+      <!--Музыка для табов-->
+      <div class="tab-content" id="content-1">
+        <div class="include" data-src="./pages/music-player-song.html"></div>
+        <div class="include" data-src="./pages/music-player-song.html"></div>
+        <div class="include" data-src="./pages/music-player-song.html"></div>
+        <div class="include" data-src="./pages/music-player-song.html"></div>
+        <div class="include" data-src="./pages/music-player-song.html"></div>
+        <div class="include" data-src="./pages/music-player-song.html"></div>
+      </div>
+      <div class="tab-content" id="content-2">
+        <div class="include" data-src="./pages/music-player-song.html"></div>
+      </div>
+      <div class="tab-content" id="content-3">
+        <div class="include" data-src="./pages/music-player-song.html"></div>
+      </div>
+      <div class="tab-content" id="content-4">
+        <div class="include" data-src="./pages/music-player-song.html"></div>
+      </div>
+      <div class="tab-content" id="content-5">
+        <div class="include" data-src="./pages/music-player-song.html"></div>
+      </div>
+      <div class="tab-content" id="content-6">
+      </div>
+
+
+      <a href="" class="music-link-text">See all sound effects</a>
+    </div>
+  </div>
 
   <div id="app"></div>
   <script type="module" src="/main.js"></script>
 </body>
 
-<script>
-function changeColor(event) {
-    const target = event.target; // Получаем элемент, на который кликнули
 
-    // Проверяем, является ли элемент <path>
-    if (target.tagName === 'path') {
-        const currentFill = target.getAttribute('fill');
-
-        // Если fill не установлен, меняем цвет
-        if (currentFill === 'none' || currentFill === '') {
-            target.setAttribute('fill', 'blue'); // Меняем цвет на красный
-            target.setAttribute('stroke', 'blue'); // Меняем цвет на красный
-        } else {
-            target.setAttribute('fill', 'none'); // Меняем обратно на прозрачный
-            target.setAttribute('stroke', '#4C526A'); // Меняем цвет на красный
-        }
-    }
-}
-function formatTime(value) {
-    const pad = (n) => ('0' + n).slice(-2);
-    const mins = Math.floor(value);
-    return `${pad(Math.floor(mins / 60))}:${pad(mins % 60)}`;
-}
-let invertConnectsSlider = document.getElementById('invert-connects');
-        noUiSlider.create(invertConnectsSlider, {
-            start: [1 * 60, 2 * 60],
-            step: 1,
-            connect: true,
-            range: {
-                min: 0,
-                max: 3 * 60
-            },
-            tooltips: true, // Включаем тултипы
-            format: {
-                to: formatTime,
-                from: function(value) {
-                    return value;
-                }
-            }
-        });
-
-        sliderInitialized = true;
-    
-</script>
 
 </html>
