@@ -208,30 +208,30 @@ label{
 //FILTER TEXT
 
 .music-player__fiter-title-text{
-    @include font-style(500, 16px, 22px, $description-dark);
+    @include font-style(500, 1rem, 1.375rem, $description-dark);
     margin: -30px 0 20px 0;
 
 }
 
 .music-player__fiter-text{
-    @include font-style(400, 14px, 24px, $description-dark)
+    @include font-style(400, .875rem, 1.5rem, $description-dark)
 }
 
 .music-player__fiter-category-text{
 
-    @include font-style(500, 14px, 24px, $deep-blue)
+    @include font-style(500, .875rem, 1.5rem, $deep-blue)
 }
 
 //КНОПКИ ДЛЯ ФИЛЬТРА
 .filter__apply-button{
-    width: 100px;
-    height: 50px;
+    width: 6.25rem;
+    height: 3.125rem;
     background-color:$deep-blue ;
-    @include font-style(500, 14px, 24px, $pure-white);
-    border-radius: 8px;
+    @include font-style(500, .875rem, 1.5rem, $pure-white);
+    border-radius: .5rem;
     border: none ;
     margin-left: 60%;
-    margin-top: 30px;
+    margin-top: 1.875rem;
 }
 
 .filter__all-category-button{
@@ -258,7 +258,7 @@ label{
 }
 @media(min-width:413px) {
     .filter{
-        top: 80px; /* Расположение сверху */
+        top: 5rem; /* Расположение сверху */
        }
 }
 @media(min-width:768px) {
@@ -276,7 +276,7 @@ label{
 }
 
 .filter{
- top: 80px; /* Расположение сверху */
+ top: 5rem; /* Расположение сверху */
 }
 
   } 
@@ -293,4 +293,26 @@ label{
         text-align: left;
         flex-direction: column;
     }
+
+    .music-player__title-text{
+      @include font-style(600, 1.75rem, 1.875rem, $dark-blue)
+    
+  }
+  
+  .music-player__tab-text{
+      @include font-style(500, 1rem, 1.1875rem, $description-dark)
+  }
+  
+  .music-player__song-name-text{
+      @include font-style(500, 1rem, 1.1875rem, $dark-blue)
+  }
+  .music-player{
+    padding: 50px 100px 50px 100px;
+    }
+    .filter{
+
+      margin-right: 6.25rem;
+
+  
+  }
   }

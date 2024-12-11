@@ -1,41 +1,43 @@
 @use 'src/colors/colors' as *; // Импортируем цвета
 
 .production{
-    padding: 30px 16px 40px 16px;
+    padding: 1.875rem 1rem 2.5rem 1rem;
     text-align: center;
     align-items: center;
     background-color: $production-bk;
 }
 
 .production__image-container{
-    margin-top: 30px;
+    margin-top: 1.875rem;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    outline: 1px solid green;
+    outline: .0625rem solid green;
     display: flex;
-    gap:5px;
+    gap:.3125rem;
 
 }
 
 .production__title-text{
-    @include font-style(600, 18px, 30px, $dark-blue)
+    @include font-style(600, 1.125rem, 1.875rem, $dark-blue)
     
 }
 
 @media(min-width:768px) {
     .production__title-text{
-        @include font-style(600, 20px, 30px, $dark-blue)
+        @include font-style(600, 1.25rem, 1.875rem, $dark-blue)
     }
     .production__image-container{
         gap:30px;
     }
 
-  } 
-  
+  }  
   @media(min-width:1244px){
     .production__image-container{
-        gap:89px;
+        gap:5rem;
     
+    }
+    .production{
+        padding: 1.875rem 6.25rem 2.5rem 6.25rem;
     }
   }
