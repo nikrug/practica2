@@ -1,4 +1,11 @@
 
+@mixin font-style($font-weight,$font-syze,$line-height,$color){
+    font-family: 'Poppins', sans-serif;
+    font-size: $font-syze;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    color:$color
+}
 $pure-white: #FFFFFF;
 $pure-black: #000;
 $dark-blue:#020D37;
@@ -11,11 +18,3 @@ $description-light:#ACAFB8;
 $dark-blue-menu:#030B26;
 $title-light:#EEEEEE;
 $production-bk:#FAFAFA;
-
-@mixin font-style($font-weight,$font-syze,$line-height,$color){
-    font-family: 'Poppins', sans-serif;
-    font-size: $font-syze;
-    font-weight: $font-weight;
-    line-height: $line-height;
-    color:$color;
-}

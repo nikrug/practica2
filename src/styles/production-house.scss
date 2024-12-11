@@ -1,4 +1,4 @@
-@use "src/colors/colors.scss" as *;
+@use 'src/colors/colors' as *; // Импортируем цвета
 
 .production{
     padding: 30px 16px 40px 16px;
@@ -19,14 +19,13 @@
 }
 
 .production__title-text{
-    font:600 18px/30px 'Poppins', sans-serif;
-    color:$dark-blue;
+    @include font-style(600, 18px, 30px, $dark-blue)
     
 }
 
 @media(min-width:768px) {
     .production__title-text{
-        font:600 20px/30px 'Poppins', sans-serif;
+        @include font-style(600, 20px, 30px, $dark-blue)
     }
     .production__image-container{
         gap:30px;

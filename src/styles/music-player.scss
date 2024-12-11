@@ -1,4 +1,4 @@
-@use "src/colors/colors.scss" as *;
+@use 'src/colors/colors.scss' as *; 
 
 .music-player{
 padding: 50px 16px 50px 16px;
@@ -6,7 +6,7 @@ text-align: left;
 align-items: center;
 position: relative;
 }
-///tab
+///TAB
 .tab {
     display: flex;
     flex-wrap: wrap;
@@ -61,7 +61,7 @@ position: relative;
   }
 
 
-//player-song
+//PLAYER-SONG
 .include{
     display: block;
     width: 100%;
@@ -95,7 +95,7 @@ position: relative;
 
 }
 
-///filter 
+///FILTER
 .filter{
     z-index: 1000; /* Обеспечивает видимость над другими элементами */
     width: 248px; /* Ширина фильтра */
@@ -111,7 +111,7 @@ position: relative;
     right:0; /* Расположение справа */
     margin-right: 15px;
     align-items: center;
-    padding: 10px 20px 0 20px;
+    padding: 10px 25px 0 25px;
 
 }
 label{
@@ -125,8 +125,8 @@ label{
 
 .close{
    margin-left: 90%;
-}
-//SLYDER
+} 
+//SLYDER STYLE
 .slider-styled,
 .slider-styled .noUi-handle {
   box-shadow: none;
@@ -186,53 +186,48 @@ label{
   
 }
 
-//music text
+//MUSIC TEXT
 
 .music-player__title-text{
-    font:600 20px/30px 'Poppins', sans-serif;
-    color:$dark-blue;
+    @include font-style(600, 20px, 30px, $dark-blue)
+  
 }
 
 .music-player__tab-text{
-    font:500 14px/19px 'Poppins', sans-serif;
-    color:$description-dark;
+    @include font-style(500, 14px, 19px, $description-dark)
 }
 
 .music-player__song-name-text{
-    font:500 14px/19px 'Poppins', sans-serif;
-    color:$dark-blue;
+    @include font-style(500, 14px, 19px, $dark-blue)
 }
 
 .music-player__time-text{
-    font:400 12px/20px 'Poppins', sans-serif;
-    color:$description-dark;
+    @include font-style(400, 12px, 20px, $description-dark)
 }
 
-//filter text
+//FILTER TEXT
 
 .music-player__fiter-title-text{
-    font:500 16px/22px 'Poppins', sans-serif;
-    color:$description-dark;
-    margin-top: -30px;
-    margin-bottom: 20px;
+    @include font-style(500, 16px, 22px, $description-dark);
+    margin: -30px 0 20px 0;
+
 }
 
 .music-player__fiter-text{
-    font:400 14px/24px 'Poppins', sans-serif;
-    color:$description-dark;
+    @include font-style(400, 14px, 24px, $description-dark)
 }
 
 .music-player__fiter-category-text{
-    font:500 14px/24px 'Poppins', sans-serif;
-    color:$deep-blue;
+
+    @include font-style(500, 14px, 24px, $deep-blue)
 }
 
+//КНОПКИ ДЛЯ ФИЛЬТРА
 .filter__apply-button{
     width: 100px;
     height: 50px;
     background-color:$deep-blue ;
-    font:500 14px/24px 'Poppins', sans-serif;
-    color:$pure-white;
+    @include font-style(500, 14px, 24px, $pure-white);
     border-radius: 8px;
     border: none ;
     margin-left: 60%;
@@ -247,12 +242,6 @@ label{
     background-color: $title-light;
     border:1px solid $description-light;
     text-align: left;
-}
-
-.fill__blue{
-    stroke:blue;
-    fill:blue;
-    cursor: pointer;
 }
 
 .filter__button{

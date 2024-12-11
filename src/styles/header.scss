@@ -1,5 +1,6 @@
 @use "src/colors/colors.scss" as *;
 
+
 .header{
     outline: 2px solid aqua;
     display: flex;
@@ -30,23 +31,19 @@
 }
 //search text
 .header__title-text{
-    font:600 20px/30px 'Poppins', sans-serif;
-    color: $pure-white;
+    @include font-style(600,  20px, 30px,$pure-white)
 }
 
 .header__title-text-gray{
-    font:600 16px/22px 'Poppins', sans-serif;
-    color:$description-light;
+    @include font-style(600, 16px, 22px, $description-light)
 }
 
 .header__search-text{
- font:400 14px/24px 'Poppins', sans-serif;
- color: $pure-white;
+    @include font-style(400, 14px, 24px, $pure-white)
 }
 
 .header__bottom-text{
-    font:500 14px/24px 'Poppins', sans-serif;
-    color: $pure-white;
+    @include font-style(500, 14px, 24px, $pure-white)
 }
 
 //search input
@@ -79,8 +76,7 @@ text-align: left;
 
 .search__input input {
     border-radius: 8px;
-    font:500 16px/28px 'Poppins', sans-serif;
-    color:$description-dark;
+    @include font-style(500, 16px, 28px, $description-dark);
     padding-left: 40px; /* Отступ для ввода текста, чтобы избежать наложения */
     box-sizing: border-box; /* Чтобы отступ не увеличивал ширину */
 }
@@ -91,30 +87,25 @@ text-align: left;
 }
 
 .menu-text{
-    font: 500 14px/24px "Poppins", sans-serif;
-    color:$description-light;
+    @include font-style(500, 14px, 24px, $description-light);
     margin: 0 30px 40px 0;
     cursor: pointer;
 }
 
 .modal__login-title-text{
-    font:600 28px/45px 'Poppins', sans-serif;
-    color:$dark-blue;
+    @include font-style(600, 28px, 45px, $dark-blue);
 }
 
 .modal__email-password-text{
-    font:500 16px/28px 'Poppins', sans-serif;
-    color:$description-dark;
+    @include font-style(500, 16px, 28px, $description-dark);
 }
 
 .modal__sign-up-text{
-    font:600 16px/24px 'Poppins', sans-serif;
-    color:$deep-blue;
+    @include font-style(600, 16px, 24px, $deep-blue);
 }
 
 .modal__transparent-text{
-    font:500 16px/28px 'Poppins', sans-serif;
-    color:$description-light;
+    @include font-style(500, 16px, 28px, $description-light);
 }
 
 .modal__login-icons{
@@ -184,20 +175,17 @@ flex-direction: row;
     background-color: $title-light;
     border-radius: 8px;
     border: 0px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-   
+    @include font-style(500, 16px, 24px, $pure-white);
     width: 100%;
     height: 50px;
     margin-bottom: 30px;
   }
+  
   .modal__login-button-modal{
     width: 90%;
     height: 50px;
     background-color:$deep-blue ;
-    font:500 14px/24px 'Poppins', sans-serif;
-    color:$pure-white;
+    @include font-style(500, 14px, 24px, $pure-white);
     border-radius: 8px;
     border: none ;
 }
@@ -241,8 +229,7 @@ flex-direction: row;
     width: 100px;
     height: 50px;
     background-color:$deep-blue ;
-    font:500 14px/24px 'Poppins', sans-serif;
-    color:$pure-white;
+    @include font-style(500, 14px, 24px, $pure-white);
     border-radius: 8px;
     border: none ;
 }
@@ -262,13 +249,11 @@ flex-direction: row;
   
   @media(min-width:768px) {
     .header__title-text{
-        font:700 36px/52px 'Poppins', sans-serif;
-        color: $pure-white;
+        @include font-style(700, 36px, 52px, $pure-white);
     }
     
     .header__title-text-gray{
-        font:500 18px/30px 'Poppins', sans-serif;
-        color:$description-light;
+        @include font-style(500, 18px, 30px, $description-light);
     }
     
 
@@ -328,8 +313,7 @@ flex-direction: row;
     }
 
     .menu-text{
-        font: 500 14px/24px "Poppins", sans-serif;
-        color:$description-light;
+        @include font-style(500, 14px, 24px, $description-light);
         margin: 0 30px 40px 0;
         cursor: pointer;
     }

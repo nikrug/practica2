@@ -23,25 +23,97 @@ export function initMusic() {
 }
 
 
-export function changeColor(event) {
+function changeColor(event) {
     const target = event.target; // Получаем элемент, на который кликнули
 
-    // Проверяем, является ли элемент <path>
-    if (target.tagName === 'path') {
+    // Проверяем, является ли элемент <svg> или <path>
+    if (target.tagName === 'svg') {
+        // Если кликнули на svg, проверяем его элементы
+        const path = target.querySelector('path'); // Находим путь внутри SVG
+        const currentFill = path.getAttribute('fill');
+
+        // Если fill не установлен, меняем цвет
+        if (currentFill === 'none' || currentFill === '') {
+            path.setAttribute('fill', 'blue'); // Меняем цвет заливки на синий
+            path.setAttribute('stroke', 'blue'); // Меняем цвет обводки на синий
+        } else {
+            path.setAttribute('fill', 'none'); // Меняем обратно на прозрачный
+            path.setAttribute('stroke', '#4C526A'); // Устанавливаем исходный цвет обводки
+        }
+    } else if (target.tagName === 'path') {
         const currentFill = target.getAttribute('fill');
 
         // Если fill не установлен, меняем цвет
         if (currentFill === 'none' || currentFill === '') {
-            target.setAttribute('fill', 'blue'); // Меняем цвет на красный
-            target.setAttribute('stroke', 'blue'); // Меняем цвет на красный
+            target.setAttribute('fill', 'blue'); // Меняем цвет заливки на синий
+            target.setAttribute('stroke', 'blue'); // Меняем цвет обводки на синий
         } else {
             target.setAttribute('fill', 'none'); // Меняем обратно на прозрачный
-            target.setAttribute('stroke', '#4C526A'); // Меняем цвет на красный
+            target.setAttribute('stroke', '#4C526A'); // Устанавливаем исходный цвет обводки
         }
     }
 }
 
+function formatTime(value) {
+    const pad = (n) => ('0' + n).slice(-2);
+    const mins = Math.floor(value);
+    return `${pad(Math.floor(mins / 60))}:${pad(mins % 60)}`;
+}
 
+// Инициализируем слайдер когда документ загрузится
+window.addEventListener('DOMContentLoaded', () => {
+    const invertConnectsSlider = document.getElementById('invert-connects');
+    
+    noUiSlider.create(invertConnectsSlider, {
+        start: [1 * 60, 2 * 60],
+        step: 1,
+        connect: true,
+        range: {
+            min: 0,
+            max: 3 * 60
+        },
+        tooltips: true, // Включаем тултипы
+        format: {
+            to: formatTime,
+            from: function (value) {
+                return value;
+            }
+        }
+    });
+
+    // Переменная sliderInitialized теперь будет доступна в этой области
+    window.sliderInitialized = true;
+});
+
+// Подключите обработчик событий для изменения цвета
+document.addEventListener('click', function(event) {
+    if (event.target.closest('svg')) { // Проверяем, если кликнули на SVG
+        changeColor(event); // Вызываем функцию изменения цвета
+    }
+});
+
+export function initPlayer() {
+    const playPauseButtons = document.querySelectorAll('.play-pause-button');
+
+    playPauseButtons.forEach(button => {
+        // Теперь мы ищем родительский элемент .music-player__player-song
+        const audio = button.closest('.music-player__player-song').querySelector('.audio');
+
+        if (audio) { // Дополнительная проверка на существование элемента audio
+            button.onclick = function() {
+                if (audio.paused) {
+                    audio.play();
+                    button.src = "./assets/music-img/pause-button.svg"; // Иконка паузы
+                } else {
+                    audio.pause();
+                    button.src = "./assets/music-img/play-button.svg"; // Иконка воспроизведения
+                }
+            };
+        } else {
+            console.error("Audio element not found for button: ", button);
+        }
+    });
+}
 
 
       
