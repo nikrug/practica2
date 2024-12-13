@@ -24,32 +24,31 @@ export function initMusic() {
 
 
 function changeColor(event) {
-    const target = event.target; // Получаем элемент, на который кликнули
+    const target = event.target; 
 
     // Проверяем, является ли элемент <svg> или <path>
     if (target.tagName === 'svg') {
-        // Если кликнули на svg, проверяем его элементы
-        const path = target.querySelector('path'); // Находим путь внутри SVG
+        const path = target.querySelector('path');
         const currentFill = path.getAttribute('fill');
 
         // Если fill не установлен, меняем цвет
         if (currentFill === 'none' || currentFill === '') {
-            path.setAttribute('fill', 'blue'); // Меняем цвет заливки на синий
-            path.setAttribute('stroke', 'blue'); // Меняем цвет обводки на синий
+            path.setAttribute('fill', 'blue'); 
+            path.setAttribute('stroke', 'blue'); 
         } else {
-            path.setAttribute('fill', 'none'); // Меняем обратно на прозрачный
-            path.setAttribute('stroke', '#4C526A'); // Устанавливаем исходный цвет обводки
+            path.setAttribute('fill', 'none'); 
+            path.setAttribute('stroke', '#4C526A'); 
         }
     } else if (target.tagName === 'path') {
         const currentFill = target.getAttribute('fill');
 
         // Если fill не установлен, меняем цвет
         if (currentFill === 'none' || currentFill === '') {
-            target.setAttribute('fill', 'blue'); // Меняем цвет заливки на синий
-            target.setAttribute('stroke', 'blue'); // Меняем цвет обводки на синий
+            target.setAttribute('fill', 'blue'); 
+            target.setAttribute('stroke', 'blue'); 
         } else {
-            target.setAttribute('fill', 'none'); // Меняем обратно на прозрачный
-            target.setAttribute('stroke', '#4C526A'); // Устанавливаем исходный цвет обводки
+            target.setAttribute('fill', 'none'); 
+            target.setAttribute('stroke', '#4C526A');
         }
     }
 }

@@ -1,6 +1,6 @@
-@use "src/colors/colors.scss" as *;
 
 
+@use 'src/colors/colors.scss' as *; 
 .header{
     outline: 2px solid aqua;
     display: flex;
@@ -12,7 +12,32 @@
     flex-direction: column;
 
 }
+input[type="checkbox"] {
+    appearance: none;
 
+   }
+   
+   input[type="checkbox"]:focus {
+    outline: none;
+   }
+   
+   input[type="checkbox"]:before {
+    content: "";
+    display: inline-block;
+    width: 1.125rem;
+    height: 1.125rem; 
+    background-color: $title-light;
+    border-radius: .1875rem; 
+   }
+   
+   input[type="checkbox"]:checked:before {
+   
+    background-color: $title-light; 
+    background-image: url("./assets/music-img/Vector.svg");
+    background-size: 80%; 
+    background-repeat: no-repeat;
+    background-position: center;
+   }
 .header__menu{
     outline: 2px solid red;
     display: flex;
@@ -31,19 +56,19 @@
 }
 //search text
 .header__title-text{
-    @include font-style(600,  20px, 30px,$pure-white)
+    @include font-style(600,  1.25rem, 1.875rem,$pure-white)
 }
 
 .header__title-text-gray{
-    @include font-style(600, 16px, 22px, $description-light)
+    @include font-style(600, 1rem, 1.375rem, $description-light)
 }
 
 .header__search-text{
-    @include font-style(400, 14px, 24px, $pure-white)
+    @include font-style(400, .875rem, 1.5rem, $pure-white)
 }
 
 .header__bottom-text{
-    @include font-style(500, 14px, 24px, $pure-white)
+    @include font-style(500, .875rem, 1.5rem, $pure-white)
 }
 
 //search input
@@ -76,7 +101,7 @@ text-align: left;
 
 .search__input input {
     border-radius: 8px;
-    @include font-style(500, 16px, 28px, $description-dark);
+    @include font-style(500, 1rem, 1.75rem, $description-dark);
     padding-left: 40px; /* Отступ для ввода текста, чтобы избежать наложения */
     box-sizing: border-box; /* Чтобы отступ не увеличивал ширину */
 }
@@ -87,25 +112,25 @@ text-align: left;
 }
 
 .menu__text{
-    @include font-style(500, 14px, 24px, $description-light);
-    margin: 0 30px 40px 0;
+    @include font-style(500, .875rem, 1.5rem, $description-light);
+    margin: 0 1.875rem 2.5rem 0;
     cursor: pointer;
 }
 
 .modal__login-title-text{
-    @include font-style(600, 28px, 45px, $dark-blue);
+    @include font-style(600, 1.75rem, 2.8125rem, $dark-blue);
 }
 
 .modal__email-password-text{
-    @include font-style(500, 16px, 28px, $description-dark);
+    @include font-style(500, 1rem, 1.75rem, $description-dark);
 }
 
 .modal__sign-up-text{
-    @include font-style(600, 16px, 24px, $deep-blue);
+    @include font-style(600, 1rem, 1.5rem, $deep-blue);
 }
 
 .modal__transparent-text{
-    @include font-style(500, 16px, 28px, $description-light);
+    @include font-style(500, 1rem, 1.75rem, $description-light);
 }
 
 .modal__login-icons{
@@ -149,7 +174,7 @@ opacity: 1;
     display: flex;
     flex-direction: column; /* Устанавливаем вертикальное направление */
     gap: 30px; /* Задаем расстояние между элементами */
-    padding-bottom: 13rem;
+    height: 80rem;
 }
 
 .modal__img-container{
@@ -165,7 +190,6 @@ flex-direction: row;
 }
 
 .modal__close{
-    color: #aaa;
     float: right;
     cursor: pointer;
     margin:30px 30px  0  auto;
@@ -174,7 +198,7 @@ flex-direction: row;
     background-color: $title-light;
     border-radius: 8px;
     border: 0px;
-    @include font-style(500, 16px, 24px, $pure-white);
+    @include font-style(500, 1rem, 1.5rem, $description-dark);
     width: 100%;
     height: 50px;
     margin-bottom: 30px;
@@ -184,7 +208,7 @@ flex-direction: row;
     width: 90%;
     height: 50px;
     background-color:$deep-blue ;
-    @include font-style(500, 14px, 24px, $pure-white);
+    @include font-style(500, .875rem, 1.5rem, $pure-white);
     border-radius: 8px;
     border: none ;
 }
@@ -193,6 +217,7 @@ flex-direction: row;
     background-color: inherit;
     border: none;
     cursor: pointer;
+    
   }
 
   .dropdown-button-hidden{
@@ -219,16 +244,16 @@ flex-direction: row;
 
 .show-dropdown {
     visibility: visible; /* Начальное состояние видимости */
-    max-height: 100%; /* Установите максимальную высоту, достаточную для вашего содержимого */
-    height: 100%;
+    max-height: 60rem; /* Установите максимальную высоту, достаточную для вашего содержимого */
+    height: 60rem;
     opacity: 1; /* Полная видимость */
 }
 
-.login-button{
-    width: 100px;
-    height: 50px;
+.menu__login-button{
+    width: 6.25rem;
+    height: 3.125rem;
     background-color:$deep-blue ;
-    @include font-style(500, 14px, 24px, $pure-white);
+    @include font-style(500, .875rem, 1.5rem, $pure-white);
     border-radius: 8px;
     border: none ;
 }
@@ -248,16 +273,16 @@ flex-direction: row;
   
   @media(min-width:768px) {
     .header__title-text{
-        @include font-style(700, 36px, 52px, $pure-white);
+        @include font-style(700, 2.25rem, 3.25rem, $pure-white);
     }
     
     .header__title-text-gray{
-        @include font-style(500, 18px, 30px, $description-light);
+        @include font-style(500, 1.125rem, 1.875rem, $description-light);
     }
     
 
     .dropdown-content {
-        height: 50%;
+        height: 30rem;
     }
       .modal{
         background-color: $dark-blue-menu; 
@@ -273,8 +298,8 @@ flex-direction: row;
     .modal__content{
         z-index: 1000;
         margin: 100px auto ;
-        width: 480px; 
-        height: 690px;
+        width: 30rem; 
+        height: 43.125rem;
         gap: 20px; /* Задаем расстояние между элементами */
         border-radius: 9px;
         padding-bottom: 16px;
@@ -313,8 +338,8 @@ flex-direction: row;
     }
 
     .menu__text{
-        @include font-style(500, 14px, 24px, $description-light);
-        margin: 0 30px 40px 0;
+        @include font-style(500, .875rem, 1.5rem, $description-light);
+        margin: 0 1.875rem 2.5rem 0;
         cursor: pointer;
     }
 

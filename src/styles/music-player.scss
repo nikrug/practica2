@@ -45,7 +45,22 @@ position: relative;
     text-decoration: none;
     border: 2px solid red;
   }
-  
+  .music-player__input[type="checkbox"]:before{
+    content: "";
+    display: inline-block;
+    width: 1.125rem;
+    height: 1.125rem; 
+    background-color:$pure-white;
+    border-radius: .1875rem; 
+  }
+  .music-player__input[type="checkbox"]:checked:before {
+   
+    background-color: $pure-white; 
+    background-image: url("./assets/music-img/Vector.svg");
+    background-size: 80%; 
+    background-repeat: no-repeat;
+    background-position: center;
+   }
   .tab > label:hover {
     border-bottom: 2px solid #818181;
     padding-bottom: -2px;
@@ -62,14 +77,10 @@ position: relative;
 
 
 //PLAYER-SONG
-.include{
-    display: block;
-    width: 100%;
-    
-}
+
 .music-player__player-song{
     display: flex;
-    padding: 10px 0;
+    padding: .625rem 0;
     width: 100%;
     outline: 2px solid red;
     
@@ -77,16 +88,16 @@ position: relative;
 
 .music-player__player-text-box{
     text-align: left;
-    margin-left:50px;
+    margin-left:3.125rem;
     flex-direction: column;
 }
 
 .music-player__player-img-box{
     flex-direction: row;
     display: flex;
-    padding: 8px 0;
+    padding: .5rem 0;
     margin-left:auto;
-    max-height: 40px;
+    max-height: 2.5rem;
 }
 
 .show{
@@ -97,9 +108,7 @@ position: relative;
 
 ///FILTER
 .filter{
-    z-index: 1000; /* Обеспечивает видимость над другими элементами */
-    width: 248px; /* Ширина фильтра */
-    height: 377px; /* Высота фильтра */
+    z-index: 100; /* Обеспечивает видимость над другими элементами */
     overflow: auto; /* Позволяет прокручивать содержимое, если оно выходит за пределы */
     background-color:#EEEEEE;
     transition: opacity .4s, visibility .4s; /* Плавный переход */
@@ -107,12 +116,10 @@ position: relative;
     opacity: 0; /* Прозрачность по умолчанию */
     position: absolute; /* Размещение относительно родительского элемента */
     display: inline-block; /* Чтобы элемент мог занимать пространство */
-    top: 110px; /* Расположение сверху */
+    top: 6.875rem; /* Расположение сверху */
     right:0; /* Расположение справа */
-    margin-right: 15px;
-    align-items: center;
-    padding: 10px 25px 0 25px;
-
+    margin-right: .9375rem;
+    padding: .625rem 1.5625rem .625rem 1.5625rem;
 }
 label{
     display: flex; /* Использование flex для выравнивания элементов на одной строке */
@@ -168,7 +175,7 @@ label{
   width: 14px;
   top: -3px;
   right: -7px;
-  /* half the width */
+  
   border-radius: 9px;
   background: blue;
   border: none;
@@ -176,33 +183,28 @@ label{
 
 .noUi-tooltip {
   background-color: transparent;
-  color: rgb(90, 90, 90);
   padding: 5px;
   border: none;
-  font-size: 12px;
-  color: grey;
-  size: 20px;
-  font-weight: 500;
-  
+  @include font-style(500, .75rem,1.25rem, $description-light)
 }
 
 //MUSIC TEXT
 
 .music-player__title-text{
-    @include font-style(600, 20px, 30px, $dark-blue)
+    @include font-style(600, 1.25rem, 1.875rem, $dark-blue)
   
 }
 
 .music-player__tab-text{
-    @include font-style(500, 14px, 19px, $description-dark)
+    @include font-style(500, .875rem, 1.1875rem, $description-dark)
 }
 
 .music-player__song-name-text{
-    @include font-style(500, 14px, 19px, $dark-blue)
+    @include font-style(500, .875rem, 1.1875rem, $dark-blue)
 }
 
 .music-player__time-text{
-    @include font-style(400, 12px, 20px, $description-dark)
+    @include font-style(400, .75rem, 1.25rem, $description-dark)
 }
 
 //FILTER TEXT
@@ -224,13 +226,14 @@ label{
 
 //КНОПКИ ДЛЯ ФИЛЬТРА
 .filter__apply-button{
+    margin-left: 9.375rem;
     width: 6.25rem;
     height: 3.125rem;
     background-color:$deep-blue ;
     @include font-style(500, .875rem, 1.5rem, $pure-white);
     border-radius: .5rem;
     border: none ;
-    margin-left: 60%;
+   
     margin-top: 1.875rem;
 }
 
@@ -310,9 +313,6 @@ label{
     padding: 50px 100px 50px 100px;
     }
     .filter{
-
       margin-right: 6.25rem;
-
-  
   }
   }
