@@ -1,7 +1,4 @@
-
-
 @use 'src/colors/colors.scss' as *; 
-
 
 .header{
     outline: 2px solid aqua;
@@ -109,7 +106,13 @@ text-align: left;
 //menu-login text
 
 .header__menu-text-header{
-    display: none;
+    margin-top: 4rem;
+    margin-left: 0.65rem;
+    z-index: 10;
+    position: absolute;
+    visibility: hidden;
+    flex-direction: column;
+    display: flex
 }
 
 .menu__text{
@@ -218,10 +221,22 @@ height: 1.5rem;
 }
 //dropdown
 .dropdown-button {
-    background-color: inherit;
-    border: none;
     cursor: pointer;
-    
+    background-image: url("./assets/header/dropdown_menu.svg");
+    background-repeat: no-repeat; /* Запрет на повторение изображения */
+    border: none; /* Убираем стандартные рамки */
+    background-color: transparent; /* Прозрачный фон */
+    outline: none; /* Убираем обводку при фокусе */
+    width: 40px;
+    height: 40px;
+  }
+ 
+  .dropdown-button-close{
+    background-image: url("/assets/header/close-menu.svg"); /* Фоновое изображение */
+    background-size: 100% 100%; /* Изображение заполняет весь размер кнопки, искажая пропорции */
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
   }
 
   .dropdown-button-hidden{
@@ -251,6 +266,7 @@ height: 1.5rem;
     max-height: 60rem; /* Установите максимальную высоту, достаточную для вашего содержимого */
     height: 60rem;
     opacity: 1; /* Полная видимость */
+    
 }
 
 .menu__login-button{
@@ -261,7 +277,10 @@ height: 1.5rem;
     border-radius: 8px;
     border: none ;
 }
-
+.show-menu{
+    visibility: visible;
+    display: flex;
+}
 .close-button{
     display: none;
     margin-top: 10px;
@@ -274,7 +293,7 @@ height: 1.5rem;
     visibility: visible;
   }
 
-  
+
   @media(min-width:768px) {
     .header__title-text{
         @include font-style(700, 2.25rem, 3.25rem, $pure-white);
@@ -298,7 +317,7 @@ height: 1.5rem;
     opacity: 1;
     
     }
-    
+
     .modal__content{
         z-index: 1000;
         margin: 100px auto ;
@@ -330,11 +349,21 @@ height: 1.5rem;
         background-color: rgba(0, 0, 0, 0.4); 
         align-items: center;
     }
+   .menu{
+    visibility: visible;
 
+   }
     .header__menu-text-header{
-        display: block;
+        margin-top: auto;
         margin-left: auto;
-        
+        z-index: 10;
+        position: relative;
+        flex-direction: row;
+        display: flex;
+        text-align: center;
+        outline: 1px solid red;
+        justify-content: center; 
+        align-items: center;   
     }
     .dropdown-button {
         visibility: hidden;
@@ -343,8 +372,8 @@ height: 1.5rem;
 
     .menu__text{
         @include font-style(500, .875rem, 1.5rem, $description-light);
-        margin: 0 1.875rem 2.5rem 0;
         cursor: pointer;
+        margin: 0 10px;
     }
 
     .header__menu{
@@ -356,7 +385,7 @@ height: 1.5rem;
     .show-dropdown {
         visibility: hidden;
         opacity: 1;
-        
+      
       }
       .close-button{
         display: none;
