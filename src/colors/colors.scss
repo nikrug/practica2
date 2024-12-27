@@ -2,6 +2,7 @@ $pure-white: #FFFFFF;
 $pure-black: #000;
 $dark-blue:#020D37;
 $deep-blue:#0432DF;
+$ligth-blue:#1B4BFF;
 $deep-blue-saturat:#CDD6F9;
 $brave-yellow:#F59E00;
 $brave-yellow-sature:#FCE2B3;
@@ -17,4 +18,12 @@ $production-bk:#FAFAFA;
     font-weight: $font-weight;
     line-height: $line-height;
     color:$color;
+}
+
+@mixin button-style($width,$height,$bk-color,$border,$border-radius){
+    width: $width;
+    height: $height;
+    background-color: $bk-color;
+    border:$border;
+    border-radius: $border-radius;
 }

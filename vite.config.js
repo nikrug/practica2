@@ -5,9 +5,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: 'index.html',
-        about: 'pages/header.html',
-        music:'music-player.html'
+        main: './src/index.html',
+        about: './src/pages/header.html',
+        music:'src/pages/music-player.html'
         
       },
     },

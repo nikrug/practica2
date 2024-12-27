@@ -1,0 +1,128 @@
+@use 'src/colors/colors.scss' as *; 
+//Blocks
+.download{
+padding: 3.125rem 1rem 3.125rem 1rem;
+background-color: $deep-blue;
+text-align: center;
+}
+
+.download__card-box{
+    text-align: left;
+    outline: 1px solid red;
+}
+
+.download__basic-card{
+ background-color: $deep-blue;
+ border: 1px solid $deep-blue-saturat;
+ border-radius: .75rem;
+ margin: 1rem 0;
+ padding: 0.9rem;
+}
+
+.download__premium-card{
+ background-color: $ligth-blue;
+ border-radius:.75rem;
+ margin-top: 1rem;
+ padding: 0.7rem;
+}
+ 
+//elements
+.download__basic-button{
+ @include button-style(none,none,$deep-blue,.125rem solid $pure-white,.5rem);
+ max-width: 7.5625rem;
+ @include font-style(600, .875rem,1.5rem,$pure-white);
+ padding: .625rem 1.15rem .625rem 1.1rem;
+ text-align: center
+}
+
+.download__premium-button{
+@include button-style(none,none,$pure-white,.125rem solid $pure-white,.5rem);
+@include font-style(600, .875rem,1.5rem,$deep-blue);
+padding: .625rem 1.15rem .625rem 1.15rem;
+max-width: 7.5625rem;
+text-align: center
+}
+
+//text
+.download__title-text{
+    @include font-style(600, 1.5rem,2.375rem,$pure-white);
+}
+
+.download__description-text{
+    @include font-style(400, 1rem,1.75rem,$pure-white);
+    margin: 1rem 0;
+}
+
+.download__card-title-text{
+    @include font-style(600, 1.25rem,1.875rem,$pure-white);
+}
+
+.download__card-subtitle-text{
+    @include font-style(600, 1.125rem, 1.875rem, $pure-white);
+    margin: 2rem 0 2rem 0;
+}
+
+.download__free-margin{
+    margin: 3.5rem 0 2rem 0;
+}
+
+@media(min-width:768px) {
+    .download__card-box{
+        text-align: left;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 43.75rem; // Установите желаемую максимальную ширину
+        margin: 0 auto; // Центрируйте контейнер
+    }
+    .download__basic-card{
+        margin: 1rem 1rem 0 0;
+    }
+
+       .download__title-text{
+        @include font-style(600, 1.75rem,2.8125rem,$pure-white);
+    }
+    
+    .download__description-text{
+        @include font-style(500, 1.125rem,2.125rem,$pure-white);
+        margin: 1rem 0;
+    }
+    
+    .download__card-title-text{
+        @include font-style(600, 1.5rem,2.375rem,$pure-white);
+    }
+    .download__card-subtitle-text{
+        @include font-style(600, 1.25rem, 2.125rem, $pure-white);
+        margin: 2rem 0 1rem 0;
+    }
+    .download__free-margin{
+        margin: 4rem 0 1.05rem 0;
+    }
+  }  
+  @media(min-width:1244px){
+    .download__title-text{
+        @include font-style(700, 2.25rem,3.25rem,$pure-white);
+    }
+    .download__basic-card{
+        padding: 2rem;
+    }
+   .download__premium-card{
+    padding: 2rem;
+   }
+    .download__description-text{
+        @include font-style(500, 1.125rem,2.125rem,$pure-white);
+        margin: 1rem 0;
+    }
+    
+    .download__card-title-text{
+        @include font-style(600, 1.75rem,2.8125rem,$pure-white);
+    }
+    
+    .download__card-subtitle-text{
+        @include font-style(600, 1.25rem, 2.125rem, $pure-white);
+        margin: 1rem 0 1rem 0;
+    }
+        .download__free-margin{
+        margin: 3rem 0 1.1rem 0;
+    }
+  }
+

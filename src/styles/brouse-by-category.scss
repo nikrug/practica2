@@ -1,0 +1,87 @@
+@use 'src/colors/colors.scss' as *; 
+
+.categoryes{
+    padding: 1.875rem 1rem 2.5rem 1rem;
+}
+
+.categoryes__img{
+    width: 8.6875rem;
+    height: 4.375rem;
+    border-radius: .5rem;
+}
+
+.categoryes__img-box{
+outline: 1px solid red;
+margin:.625rem 0 .3125rem 0;
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(8.75rem, 1fr)); // Автоматическое заполнение
+}
+
+.categoryes__item {
+    position: relative;  /* Устанавливаем относительное позиционирование для родительского контейнера */
+    display: inline-block;  /* Позволяет элементам располагаться в ряд, если необходимо */
+    margin:.1rem .1rem 0 0; 
+    text-align: center;
+}
+
+.categoryes__title-text{
+    @include font-style(600, 1.25rem, 1.875rem, $dark-blue );
+}
+
+.categoryes__img-text{
+    @include font-style(600, 1rem, 1.375rem, $title-light );
+    position: absolute; 
+    top: 50%;  /* Устанавливаем текст на 50% от верхней границы родителя */
+    left: 50%;  /* Устанавливаем текст на 50% от левой границы родителя */
+    transform: translate(-50%, -50%);
+}
+
+.categoryes__see-all-text{
+    @include font-style(600, .875rem, 1.5rem, $deep-blue )
+}
+
+@media(min-width:768px) {
+    .categoryes{
+        padding: 2.5rem 3.75rem 2.5rem 3.75rem;
+    }
+    .categoryes__img{
+        width: 9.375rem;
+        height: 5.625rem;
+    }
+    .categoryes__title-text{
+        @include font-style(600, 1.5rem, 2.375rem, $dark-blue )
+        
+    }
+    .categoryes__img-text{
+        @include font-style(600, 1.125rem, 1.875rem, $title-light );
+    }
+    .categoryes__item {
+        margin:.25rem .25rem 0 0; 
+    }
+    .categoryes__img-box{
+        grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr)); // Автоматическое заполнение
+        }
+  }  
+
+  @media(min-width:1244px){
+    .categoryes{
+        padding: 3.75rem 6.3125rem 3.75rem 6.3125rem;
+    }
+    .categoryes__img-box{
+    grid-template-columns: repeat(auto-fill, minmax(13.9vw, 1fr)); // Автоматическое заполнение
+    }
+    
+    $image-scale: 13vw; 
+
+    .categoryes__img {
+            width: $image-scale; // Ширина изображения зависит от ширины окна
+            height: auto; // Высота автоматически подстраивается
+     }
+
+    .categoryes__item {
+        margin:.4rem .8rem 0 0; 
+    }
+    .categoryes__img-text{
+        @include font-style(600, 1.125rem, 1.875rem, $title-light );
+    }
+  }

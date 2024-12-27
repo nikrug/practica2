@@ -30,7 +30,11 @@
     .production__image-container{
         gap:30px;
     }
+    .production{
+        padding: 2.5rem 6.25rem 2.5rem 6.25rem;
 
+    }
+    
   }  
   @media(min-width:1244px){
     .production__image-container{

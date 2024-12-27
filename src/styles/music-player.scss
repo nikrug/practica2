@@ -10,7 +10,7 @@ position: relative;
 .tab {
     display: flex;
     flex-wrap: wrap;
-    gap: 1em;
+    gap: .1rem;
     border: 2px solid red;
   }
   
@@ -23,7 +23,7 @@ position: relative;
     display: none;
     width: 100%;
     height: 100%;
-    gap: -10px;
+    gap: -0.625rem;
     border: 2px solid red;
   }
   
@@ -77,27 +77,27 @@ position: relative;
 
 
 //PLAYER-SONG
-
+.play-pause-button{
+  margin-left: .875rem;
+}
 .music-player__player-song{
     display: flex;
     padding: .625rem 0;
-    width: 100%;
     outline: 2px solid red;
-    
+    gap:.575rem;
 }
 
 .music-player__player-text-box{
     text-align: left;
-    margin-left:3.125rem;
+    margin-left:1.125rem;
     flex-direction: column;
 }
 
 .music-player__player-img-box{
     flex-direction: row;
     display: flex;
-    padding: .5rem 0;
     margin-left:auto;
-    max-height: 2.5rem;
+    height: .475rem;
 }
 
 .show{
@@ -226,14 +226,9 @@ label{
 
 //КНОПКИ ДЛЯ ФИЛЬТРА
 .filter__apply-button{
+    @include button-style(6.25rem,3.125rem,$deep-blue,none,.5rem);
     margin-left: 9.375rem;
-    width: 6.25rem;
-    height: 3.125rem;
-    background-color:$deep-blue ;
     @include font-style(500, .875rem, 1.5rem, $pure-white);
-    border-radius: .5rem;
-    border: none ;
-   
     margin-top: 1.875rem;
 }
 
@@ -265,6 +260,9 @@ label{
        }
 }
 @media(min-width:768px) {
+.tab{
+  gap:0.5rem;
+}
 .filter__button{
         
         display: none;
@@ -281,11 +279,16 @@ label{
 .filter{
  top: 5rem; /* Расположение сверху */
 }
-
+.music-player{
+  padding: 3.125rem 3.75rem 3.125rem 3.75rem;
+  }
   } 
   
   @media(min-width:1244px){
+    .music-player__player-song{
 
+      gap:4.875rem;
+  }
     .filter__button-tablet{
         display: none;
     }

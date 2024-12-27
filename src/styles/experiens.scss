@@ -1,0 +1,83 @@
+@use 'src/colors/colors.scss' as *; 
+
+//blocks
+.experiens{
+padding: 3.125rem 1.25rem 4.375rem 1.25rem;
+text-align: center;
+justify-content: center;
+}
+.experiens__title-block{
+ text-align: center;
+ margin: 0 0 4rem 0;
+}
+
+.experiens__customers-block{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 60.9375rem; // Установите желаемую максимальную ширину
+    gap: 1.875rem; /* Расстояние между элементами сетки */
+    margin: 0 auto 1rem auto; // Центрируйте контейнер
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.experiens__customer{
+ text-align: center;
+ justify-content: center;
+ border: 1px solid $title-light;
+ border-radius: .5rem;
+ padding: 1rem 1rem 2rem 1rem;
+
+}
+
+.show-experiens-desctop{
+    display: none;
+}
+
+.show-experiens-tablet{
+    display: none;
+}
+//text
+.experiens__title-text{
+     @include font-style(600, 1.25rem, 1.875rem, $dark-blue );
+}
+
+.experiens__yellow-title-text{
+    @include font-style(600, .875rem, .875rem, $brave-yellow);
+}
+
+.experiens__customer-card-text{
+    @include font-style(500, .875rem, 1.5rem, $description-dark);
+    margin: 1rem 0 1rem 0;
+}
+
+.experiens__customer-card-title-text{
+    @include font-style(600, 1.125rem, 1.875rem, $dark-blue);
+}
+
+.experiens__customer-card-subtitle-text{
+    @include font-style(500, .875rem, 1.5rem, $description-light);
+}
+
+@media(min-width:768px) {
+    .show-experiens-tablet{
+        display: block;
+    }
+    .experiens__title-text{
+        @include font-style(600, 1.5rem, 2.375rem, $dark-blue );
+   }
+
+    .experiens__customers-block{
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }  
+
+@media(min-width:1244px){
+    .show-experiens-desctop{
+        display: block;
+    }
+    .experiens__customers-block{
+        grid-template-columns: repeat(3, 1fr);
+    }
+  }

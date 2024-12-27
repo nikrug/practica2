@@ -1,0 +1,98 @@
+@use 'src/colors/colors.scss' as *; 
+//blocks
+.why-us{
+    padding:3.125rem 1rem 3.125rem 1rem;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    outline: 1px solid red;
+}
+.why-us__title-text-block{
+outline: 1px solid red;
+text-align: center;
+}
+
+.why-us__text-box{
+    outline: 1px solid red;
+}
+
+.why-us__text-block{
+    outline: 1px solid red;
+    margin-top: 1.25rem;
+    max-width: 16.2rem
+}
+//Text
+.why-us__title-text{
+    @include font-style(600, 1.25rem, 1.875rem, $dark-blue )
+    
+}
+
+.why-us__yellow-text{
+    @include font-style(600, .875rem, .875rem, $brave-yellow )
+}
+
+.why-us__label-text{
+    @include font-style(600, 1rem, 1.375rem, $dark-blue );
+    margin:1rem 0 0 0;
+}
+
+
+.why-us__description-text{
+    @include font-style(500, .875rem, 1.5rem, $description-dark )
+}
+
+@media(min-width:768px) {
+    .why-us__text-box{
+        outline: 1px solid red;
+        gap: 40px; 
+        display: grid;               /* Используем сетку */
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+
+    .why-us__title-text-block{
+        width: 29.125rem;
+        margin-bottom: 1rem;
+    }
+    .why-us__label-text{
+        @include font-style(600, 1.125rem,1.875rem, $dark-blue )
+    }
+
+    .why-us__title-text{
+        @include font-style(600, 1.5rem, 2.375rem, $dark-blue )
+        
+    }
+    .why-us__text-block{
+        outline: 1px solid red;
+        margin-top: 0rem;
+    
+    }
+  }  
+  @media(min-width:1244px){
+    .why-us{
+        padding:3.75rem 6.25rem 6.25rem 6.25rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: start;
+        align-items: start;
+    }
+    .why-us__title-text{
+        @include font-style(600, 1.75rem, 2.8125rem, $dark-blue )
+        
+    }
+    .why-us__title-text-block{
+        text-align: left;
+        margin: 0rem;
+        width: 23.0625rem;
+        height: 10.375rem;
+        
+        }
+        .why-us__text-block{
+            width: 23.0625rem;
+        }
+        .why-us__text-box{
+            gap: clamp(40px, 3vw + 20px, 140px);
+        }
+
+  }
