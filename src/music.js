@@ -102,10 +102,10 @@ export function initPlayer() {
             button.onclick = function() {
                 if (audio.paused) {
                     audio.play();
-                    button.src = "./assets/music-img/pause-button.svg"; // Иконка паузы
+                    button.src = "/assets/music-img/pause-button.svg"; // Иконка паузы
                 } else {
                     audio.pause();
-                    button.src = "./assets/music-img/play-button.svg"; // Иконка воспроизведения
+                    button.src = "/assets/music-img/play-button.svg"; // Иконка воспроизведения
                 }
             };
         } else {

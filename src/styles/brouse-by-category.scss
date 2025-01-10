@@ -11,17 +11,17 @@
 }
 
 .categoryes__img-box{
-outline: 1px solid red;
+
 margin:.625rem 0 .3125rem 0;
 display: grid;
-grid-template-columns: repeat(auto-fill, minmax(8.75rem, 1fr)); // Автоматическое заполнение
+grid-template-columns: repeat(auto-fill, minmax(8.35rem, 9rem)); // Автоматическое заполнение
 }
 
 .categoryes__item {
     position: relative;  /* Устанавливаем относительное позиционирование для родительского контейнера */
     display: inline-block;  /* Позволяет элементам располагаться в ряд, если необходимо */
-    margin:.1rem .1rem 0 0; 
     text-align: center;
+    
 }
 
 .categoryes__title-text{
@@ -45,7 +45,7 @@ grid-template-columns: repeat(auto-fill, minmax(8.75rem, 1fr)); // Автома�
         padding: 2.5rem 3.75rem 2.5rem 3.75rem;
     }
     .categoryes__img{
-        width: 9.375rem;
+        width: 9rem;
         height: 5.625rem;
     }
     .categoryes__title-text{
@@ -59,7 +59,7 @@ grid-template-columns: repeat(auto-fill, minmax(8.75rem, 1fr)); // Автома�
         margin:.25rem .25rem 0 0; 
     }
     .categoryes__img-box{
-        grid-template-columns: repeat(auto-fill, minmax(9.375rem, 1fr)); // Автоматическое заполнение
+        grid-template-columns: repeat(auto-fill, minmax(9.1rem, 9.3rem)); // Автоматическое заполнение
         }
   }  
 

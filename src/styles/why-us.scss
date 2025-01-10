@@ -6,19 +6,18 @@
     flex-direction: column;
     display: flex;
     align-items: center;
-    outline: 1px solid red;
 }
 .why-us__title-text-block{
-outline: 1px solid red;
+
 text-align: center;
 }
 
 .why-us__text-box{
-    outline: 1px solid red;
+
 }
 
 .why-us__text-block{
-    outline: 1px solid red;
+
     margin-top: 1.25rem;
     max-width: 16.2rem
 }
@@ -44,7 +43,7 @@ text-align: center;
 
 @media(min-width:768px) {
     .why-us__text-box{
-        outline: 1px solid red;
+
         gap: 40px; 
         display: grid;               /* Используем сетку */
         grid-template-columns: repeat(2, 1fr);
@@ -64,7 +63,7 @@ text-align: center;
         
     }
     .why-us__text-block{
-        outline: 1px solid red;
+
         margin-top: 0rem;
     
     }

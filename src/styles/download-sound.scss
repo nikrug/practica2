@@ -8,7 +8,7 @@ text-align: center;
 
 .download__card-box{
     text-align: left;
-    outline: 1px solid red;
+
 }
 
 .download__basic-card{
@@ -98,7 +98,8 @@ text-align: center
         margin: 4rem 0 1.05rem 0;
     }
   }  
-  @media(min-width:1244px){
+
+@media(min-width:1244px){
     .download__title-text{
         @include font-style(700, 2.25rem,3.25rem,$pure-white);
     }

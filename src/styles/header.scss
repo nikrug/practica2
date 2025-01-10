@@ -1,7 +1,7 @@
 @use 'src/colors/colors.scss' as *; 
 
 .header{
-    outline: 2px solid aqua;
+
     display: flex;
     width: 100%;
     min-height: 800px;
@@ -37,7 +37,7 @@ input[type="checkbox"] {
     background-position: center;
    }
 .header__menu{
-    outline: 2px solid red;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -47,7 +47,7 @@ input[type="checkbox"] {
     display: flex;
     gap:50px;
     margin:50px 10px 0 10px;
-    outline: 2px solid rgb(199, 199, 199);
+
     align-items: center;
     text-align: center;
     flex-direction: column;
@@ -116,7 +116,7 @@ text-align: left;
 }
 
 .menu__text{
-    @include font-style(500, .875rem, 1.5rem, $description-light);
+    @include font-style(500, 1rem, 1.5rem, $description-light);
     margin: 0 1.875rem 2.5rem 0;
     cursor: pointer;
 }
@@ -361,7 +361,7 @@ height: 1.5rem;
         flex-direction: row;
         display: flex;
         text-align: center;
-        outline: 1px solid red;
+ 
         justify-content: center; 
         align-items: center;   
     }
@@ -377,7 +377,7 @@ height: 1.5rem;
     }
 
     .header__menu{
-        outline: 2px solid red;
+    
         display: flex;
         justify-content: space-between;
         padding: 10px 0 10px 50px;
